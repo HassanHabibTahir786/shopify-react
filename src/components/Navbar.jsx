@@ -53,7 +53,7 @@ const Navbar = () => {
             }}
             position={"static"} >
             <StyledToolbar>
-            {/* <TemporaryDrawer /> */}
+                <TemporaryDrawer />
 
 
                 <Box sx={{ display: { xs: "flex", md: "none" }, alignItems: "center", }}>
@@ -97,7 +97,8 @@ const Navbar = () => {
 
                                 </Typography>
                                 {manue === ind ?
-                                    <Box >
+                                    <Box 
+                                     sx={{width:"200px", position:'absolute', transition: 'all 0.3s ease',}} >
                                         <div style={{
                                             content: "",
                                             position: 'absolute',
@@ -108,7 +109,8 @@ const Navbar = () => {
                                             marginLeft: '20px',
                                             border: '1px solid',
                                         }} />
-                                        <Paper sx={{ width: "200px", maxWidth: '100%', position: "absolute", }}>
+                                        <Paper
+                                            sx={{ width: "200px", maxWidth: '100%',}}>
 
                                             <MenuList>
                                                 <MenuItem>
@@ -141,6 +143,7 @@ const Navbar = () => {
                                     </Box>
                                     :
                                     null}
+                                    
 
                             </Box>
                         ))}

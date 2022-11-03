@@ -10,38 +10,462 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import CloseIcon from '@mui/icons-material/Close';
 import {
     Menu as MenuIcon,
 } from "@mui/icons-material/";
 import IconButton from '@mui/material/IconButton';
+import ListSubheader from '@mui/material/ListSubheader';
+import SendIcon from '@mui/icons-material/Send';
+import DraftsIcon from '@mui/icons-material/Drafts';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
+import StarBorder from '@mui/icons-material/StarBorder';
+import Collapse from '@mui/material/Collapse';
+
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
+
 
 export default function TemporaryDrawer() {
     const [state, setState] = React.useState({
         left: false,
     });
 
-    const toggleDrawer = ((anchor, open) => (event) => {
-        setState({ ...state, [anchor]: open });
-    }
-    )
+    const [expanded, setExpanded] = React.useState(false);
 
-    const list = () => (
+    const handleChange = (panel) => (event, isExpanded) => {
+        setExpanded(isExpanded ? panel : false);
+    };
+
+    // const toggleDrawer = ((anchor, open) => (event) => {
+    //     setState({ ...state, [anchor]: open });
+    // }
+    // )
+    const toggleDrawer = (anchor, open) => (event) => {
+        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+            return;
+        }
+
+        setState({ ...state, [anchor]: open });
+    };
+
+    const [open, setOpen] = React.useState({
+        home: false,
+        shop: false,
+        features: false,
+        lookbook: false,
+        pages: false,
+        blog: false
+    });
+
+
+
+    const list = (anchor) => (
         <Box
+
             sx={{ width: 250 }}
             role="presentation"
         >
-            <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
+            <IconButton
+                onClick={toggleDrawer(anchor, false)}
+                onKeyDown={toggleDrawer(anchor, false)}
+            >
+                <CloseIcon />
+            </IconButton>
+            <List
+                sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', padding: 0 }}
+                component="nav"
+                aria-labelledby="nested-list-subheader"
+
+            >
+
+
+                <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} disableGutters={true}	>
+                    <AccordionSummary
+                        disableGutters={true}
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1bh-content"
+                        id="panel1bh-header"
+                    >
+                        <Typography sx={{ width: '33%', flexShrink: 0, }}>
+                            HOME
+                        </Typography>
+                    </AccordionSummary>
+                    <AccordionDetails sx={{ bgcolor: "#f2f2f2", padding: "0" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            home1
+                        </Typography>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            home2
+                        </Typography>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            home3
+                        </Typography>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            home4
+                        </Typography>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            home5
+                        </Typography>
+
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')} disableGutters={true}>
+                    <AccordionSummary
+                        disableGutters={true}
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel2bh-content"
+                        id="panel2bh-header"
+                    >
+                        <Typography sx={{ width: '33%', flexShrink: 0 }}>SHOP</Typography>
+
+                    </AccordionSummary>
+                    <AccordionDetails sx={{ bgcolor: "#f2f2f2", padding: "0" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            shop1
+                        </Typography>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            shop2
+                        </Typography>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            shop3
+                        </Typography>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            shop4
+                        </Typography>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            shop5
+                        </Typography>
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')} disableGutters={true}>
+                    <AccordionSummary
+                        disableGutters={true}
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel3bh-content"
+                        id="panel3bh-header"
+                    >
+                        <Typography sx={{ width: '33%', flexShrink: 0 }}>
+                            FEATURES
+                        </Typography>
+
+                    </AccordionSummary>
+                    <AccordionDetails sx={{ bgcolor: "#f2f2f2", padding: "0" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            feature1
+                        </Typography>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            feature2
+                        </Typography>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            feature3
+                        </Typography>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            feature4
+                        </Typography>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            feature5
+                        </Typography>
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')} disableGutters={true}>
+                    <AccordionSummary
+                        disableGutters={true}
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel4bh-content"
+                        id="panel4bh-header"
+                    >
+                        <Typography sx={{ width: '33%', flexShrink: 0 }}>LOOKBOOK</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails sx={{ bgcolor: "#f2f2f2", padding: "0" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            lookbook1
+                        </Typography>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            lookbook2
+                        </Typography>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            lookbook3
+                        </Typography>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            lookbook4
+                        </Typography>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            lookbook5
+                        </Typography>
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion expanded={expanded === 'panel5'} onChange={handleChange('panel5')} disableGutters={true}>
+                    <AccordionSummary
+                        disableGutters={true}
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel4bh-content"
+                        id="panel4bh-header"
+                    >
+                        <Typography sx={{ width: '33%', flexShrink: 0 }}>PAGES</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails sx={{ bgcolor: "#f2f2f2", padding: "0" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            page1
+                        </Typography>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            page2
+                        </Typography>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            page3
+                        </Typography>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            page4
+                        </Typography>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            page5
+                        </Typography>
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion expanded={expanded === 'panel6'} onChange={handleChange('panel6')} disableGutters={true}>
+                    <AccordionSummary
+                        disableGutters={true}
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel4bh-content"
+                        id="panel4bh-header"
+                    >
+                        <Typography sx={{ width: '33%', flexShrink: 0 }}>BLOG</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails sx={{ bgcolor: "#f2f2f2", padding: "0" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            blog1
+                        </Typography>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            blog2
+                        </Typography>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            blog3
+                        </Typography>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            blog4
+                        </Typography>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                            blog5
+                        </Typography>
+                    </AccordionDetails>
+                </Accordion>
+
+                {/* <ListItemButton
+                    sx={{ borderTop: "1px solid #cbc3c3", padding: "3px 7px" }}
+                    onClick={() => {
+                        open.home === false ?
+                            setOpen(prevState => ({
+                                ...prevState,
+                                home: true
+                            }))
+                            :
+                            setOpen(prevState => ({
+                                ...prevState,
+                                home: false
+                            }))
+                    }}>
+                    <ListItemText primary="Home" />
+                    {open.home ? <RemoveIcon /> : <AddIcon />}
+                </ListItemButton> */}
+                {/* <Collapse in={open.home} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding sx={{ bgcolor: "#f2f2f2" }}>
+                        <ListItemButton sx={{ pl: 4, py: 0, borderTop: "1px solid #c3bfbf" }}>
+                            <ListItemText primary="home1" />
                         </ListItemButton>
-                    </ListItem>
-                ))}
+                        <ListItemButton sx={{ pl: 4, py: 0, borderTop: "1px solid #c3bfbf" }}>
+                            <ListItemText primary="home2" />
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4, py: 0, borderTop: "1px solid #c3bfbf" }}>
+                            <ListItemText primary="home3" />
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4, py: 0, borderTop: "1px solid #c3bfbf" }}>
+                            <ListItemText primary="home4" />
+                        </ListItemButton>
+                    </List>
+                  
+                </Collapse> */}
+                {/* <ListItemButton
+                    sx={{ borderTop: "1px solid #cbc3c3", padding: "3px 7px" }}
+                    onClick={() => {
+                        open.shop === false ?
+                            setOpen(prevState => ({
+                                ...prevState,
+                                shop: true
+                            }))
+                            :
+                            setOpen(prevState => ({
+                                ...prevState,
+                                shop: false
+                            }))
+
+                    }}>
+                    <ListItemText primary="Shop" />
+                    {open.shop ? <RemoveIcon /> : <AddIcon />}
+                </ListItemButton> */}
+                {/* <Collapse in={open.shop} timeout="auto" unmountOnExit sx={{ bgcolor: "#f2f2f2" }}>
+                    <List component="div" disablePadding>
+                        <ListItemButton sx={{ pl: 4, py: 0, borderTop: "1px solid #c3bfbf" }}>
+                            <ListItemText primary="shop1" />
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4, py: 0, borderTop: "1px solid #c3bfbf" }}>
+                            <ListItemText primary="shop2" />
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4, py: 0, borderTop: "1px solid #c3bfbf" }}>
+                            <ListItemText primary="shop3" />
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4, py: 0, borderTop: "1px solid #c3bfbf" }}>
+                            <ListItemText primary="shop4" />
+                        </ListItemButton>
+                    </List>
+                </Collapse> */}
+                {/* <ListItemButton
+                    sx={{ borderTop: "1px solid #cbc3c3", padding: "3px 7px" }}
+                    onClick={() => {
+                        open.features === false ?
+                            setOpen(prevState => ({
+                                ...prevState,
+                                features: true
+                            }))
+                            :
+                            setOpen(prevState => ({
+                                ...prevState,
+                                features: false
+                            }))
+                    }}>
+                    <ListItemText primary="Features" />
+                    {open.features ? <RemoveIcon /> : <AddIcon />}
+
+                </ListItemButton> */}
+                {/* <Collapse in={open.features} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding sx={{ bgcolor: "#f2f2f2" }}>
+                        <ListItemButton sx={{ pl: 4, py: 0, borderTop: "1px solid #c3bfbf" }}>
+                            <ListItemText primary="features1" />
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4, py: 0, borderTop: "1px solid #c3bfbf" }}>
+                            <ListItemText primary="features2" />
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4, py: 0, borderTop: "1px solid #c3bfbf" }}>
+                            <ListItemText primary="features3" />
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4, py: 0, borderTop: "1px solid #c3bfbf" }}>
+                            <ListItemText primary="features4" />
+                        </ListItemButton>
+                    </List>
+                </Collapse> */}
+                {/* <ListItemButton
+                    sx={{ borderTop: "1px solid #cbc3c3", padding: "3px 7px" }}
+                    onClick={() => {
+                        open.lookbook === false ?
+                            setOpen(prevState => ({
+                                ...prevState,
+                                lookbook: true
+                            }))
+                            :
+                            setOpen(prevState => ({
+                                ...prevState,
+                                lookbook: false
+                            }))
+                    }}>
+                 
+                    <ListItemText primary="Lookbook" />
+                    {open.lookbook ? <RemoveIcon /> : <AddIcon />}
+                </ListItemButton> */}
+                {/* <Collapse in={open.lookbook} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding sx={{ bgcolor: "#f2f2f2" }}>
+                        <ListItemButton sx={{ pl: 4, py: 0, borderTop: "1px solid #c3bfbf" }}>
+                            <ListItemText primary="home1" />
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4, py: 0, borderTop: "1px solid #c3bfbf" }}>
+                            <ListItemText primary="home2" />
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4, py: 0, borderTop: "1px solid #c3bfbf" }}>
+                            <ListItemText primary="home3" />
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4, py: 0, borderTop: "1px solid #c3bfbf" }}>
+                            <ListItemText primary="home4" />
+                        </ListItemButton>
+                    </List>
+                </Collapse> */}
+                {/* <ListItemButton
+                    sx={{ borderTop: "1px solid #cbc3c3", padding: "3px 7px" }}
+                    onClick={() => {
+                        open.pages === false ?
+                            setOpen(prevState => ({
+                                ...prevState,
+                                pages: true
+                            }))
+                            :
+                            setOpen(prevState => ({
+                                ...prevState,
+                                pages: false
+                            }))
+                    }}>
+                   
+                    <ListItemText primary="Pages" />
+                    {open.pages ? <RemoveIcon /> : <AddIcon />}
+                </ListItemButton> */}
+                {/* <Collapse in={open.pages} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding sx={{ bgcolor: "#f2f2f2" }}>
+                        <ListItemButton sx={{ pl: 4, py: 0, borderTop: "1px solid #c3bfbf" }}>
+                            <ListItemText primary="page1" />
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4, py: 0, borderTop: "1px solid #c3bfbf" }}>
+                            <ListItemText primary="page2" />
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4, py: 0, borderTop: "1px solid #c3bfbf" }}>
+                            <ListItemText primary="page3" />
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4, py: 0, borderTop: "1px solid #c3bfbf" }}>
+                            <ListItemText primary="page4" />
+                        </ListItemButton>
+                    </List>
+                </Collapse> */}
+                {/* <ListItemButton
+                    sx={{ borderTop: "1px solid #cbc3c3", padding: "3px 7px" }}
+                    onClick={() => {
+                        open.blog === false ?
+                            setOpen(prevState => ({
+                                ...prevState,
+                                blog: true
+                            }))
+                            :
+                            setOpen(prevState => ({
+                                ...prevState,
+                                blog: false
+                            }))
+                    }}>
+                    <ListItemText primary="Blog" />
+                    {open.blog ? <RemoveIcon /> : <AddIcon />}
+                </ListItemButton> */}
+                {/* <Collapse in={open.blog} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding sx={{ bgcolor: "#f2f2f2" }}>
+                        <ListItemButton sx={{ pl: 4, py: 0, borderTop: "1px solid #c3bfbf" }}>
+                            <ListItemText primary="blog1" />
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4, py: 0, borderTop: "1px solid #c3bfbf" }}>
+                            <ListItemText primary="blog2" />
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4, py: 0, borderTop: "1px solid #c3bfbf" }}>
+                            <ListItemText primary="blog3" />
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4, py: 0, borderTop: "1px solid #c3bfbf" }}>
+                            <ListItemText primary="blog4" />
+                        </ListItemButton>
+                    </List>
+                </Collapse> */}
+
+
+
             </List>
+
+
             <Divider />
         </Box>
     );
@@ -49,7 +473,6 @@ export default function TemporaryDrawer() {
     return (
         <div>
             <React.Fragment>
-                {/* <Button onClick={toggleDrawer('left', true)}>{'click me'}</Button> */}
                 <IconButton
                     onClick={toggleDrawer('left', true)}
                     size="large"
