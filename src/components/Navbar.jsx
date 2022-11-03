@@ -5,6 +5,11 @@ import {
     styled,
     Toolbar,
     Typography,
+    Paper,
+    MenuList,
+    MenuItem,
+    ListItemText
+
 } from "@mui/material";
 import {
     Menu as MenuIcon,
@@ -16,6 +21,8 @@ import Badge from '@mui/material/Badge';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import IconButton from '@mui/material/IconButton';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import TemporaryDrawer from "./Drawer";
+
 
 
 const Navbar = () => {
@@ -28,7 +35,7 @@ const Navbar = () => {
         display: "flex",
         gap: 15,
     });
- 
+
     const MenuItems = [
         { Name: "HOME", Link: "/" },
         { Name: "SHOP", Link: "#" },
@@ -37,7 +44,8 @@ const Navbar = () => {
         { Name: "PAGES", Link: "#" },
         { Name: "BLOG", Link: "#" },
     ];
-    const [open, SetOpen] = useState(false);
+    const [manue, showManue] = useState(null);
+    console.log(manue);
     return (
         <AppBar
             sx={{
@@ -45,18 +53,11 @@ const Navbar = () => {
             }}
             position={"static"} >
             <StyledToolbar>
+            {/* <TemporaryDrawer /> */}
+
 
                 <Box sx={{ display: { xs: "flex", md: "none" }, alignItems: "center", }}>
-
-                    <IconButton
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="menu"
-                        sx={{ mr: 2, }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
+                    <TemporaryDrawer />
                     <SearchIcon sx={{ cursor: "pointer" }} />
 
                 </Box>
@@ -67,7 +68,7 @@ const Navbar = () => {
                     <Typography sx={{ fontSize: "30px", fontWeight: [700], display: { xs: "flex", md: "none" } }}>
                         BLOCTECH
                     </Typography>
-                  
+
                 </Box>
 
                 <Box sx={{ display: "flex" }}>
@@ -76,71 +77,92 @@ const Navbar = () => {
 
                     <Box sx={{ display: { xs: "none", sm: "none", md: "flex", }, marginRight: { md: 2, lg: 6 }, alignItems: "center", gap: { md: 2, lg: 4 } }}>
 
-                        {MenuItems.map((item) => (
 
-                            <Typography
-                                sx={{
-                                    cursor: "pointer",
-                                    fontSize: { md: "10px", lg: "12px" },
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                }}
+                        {MenuItems.map((item, ind) => (
+                            <Box
+                                onMouseOver={() => showManue(ind)}
+                                onMouseLeave={() => showManue(null)}
                             >
-                                {item.Name}
-                                <ExpandMoreIcon />
+                                <Typography
+                                    sx={{
+                                        cursor: "pointer",
+                                        fontSize: { md: "10px", lg: "12px" },
+                                        display: 'flex',
+                                        alignItems: 'center',
 
-                            </Typography>
+                                    }}
+                                >
+                                    {item.Name}
+                                    <ExpandMoreIcon />
+
+                                </Typography>
+                                {manue === ind ?
+                                    <Box >
+                                        <div style={{
+                                            content: "",
+                                            position: 'absolute',
+                                            width: '40px',
+                                            height: '40px',
+                                            transform: 'rotate(45deg)',
+                                            backgroundColor: 'white',
+                                            marginLeft: '20px',
+                                            border: '1px solid',
+                                        }} />
+                                        <Paper sx={{ width: "200px", maxWidth: '100%', position: "absolute", }}>
+
+                                            <MenuList>
+                                                <MenuItem>
+
+                                                    <ListItemText>One</ListItemText>
+
+                                                </MenuItem>
+                                                <MenuItem>
+
+                                                    <ListItemText>two</ListItemText>
+
+                                                </MenuItem>
+                                                <MenuItem>
+
+                                                    <ListItemText>three</ListItemText>
+
+                                                </MenuItem>
+                                                <MenuItem>
+
+                                                    <ListItemText>four</ListItemText>
+
+                                                </MenuItem>
+                                                <MenuItem>
+
+                                                    <ListItemText>five</ListItemText>
+
+                                                </MenuItem>
+                                            </MenuList>
+                                        </Paper>
+                                    </Box>
+                                    :
+                                    null}
+
+                            </Box>
                         ))}
+
+
+
+
                     </Box>
                     <SocialBox>
                         <SearchIcon sx={{ display: { xs: "none", md: "flex", cursor: "pointer", fontSize: "20px" } }} />
                         <SettingsIcon sx={{ cursor: "pointer", fontSize: "20px" }} />
                         <FavoriteBorderIcon sx={{ display: { xs: "none", md: "flex", cursor: "pointer", fontSize: "20px" } }} />
-                        <Badge color="secondary" badgeContent={0} showZero sx={{ cursor: "pointer", fontSize: "20px" }}>
-                            <ShoppingBagIcon />
+                        <Badge color="secondary" badgeContent={0} showZero sx={{ cursor: "pointer", }}>
+                            <ShoppingBagIcon sx={{ fontSize: "20px" }} />
                         </Badge>
                     </SocialBox>
                 </Box>
 
 
-                {/* <SearchBox>
-                    <InputBase placeholder="Search ..." sx={{ color: "white" }} />
-                    <MenuIcon
-                        sx={{
-                            color: "white",
-                            display: { xs: "block", sm: "block", md: "none" },
-                        }}
-                        onClick={() => SetOpen(!open)}
-                    />
-                </SearchBox> */}
+
             </StyledToolbar>
-            {/* <Menu
-                id="demo-positioned-menu"
-                aria-labelledby="demo-positioned-button"
-                open={open}
-                onClose={() => SetOpen(!open)}
-                anchorOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                }}
-                transformOrigin={{
-                    vertical: "top",
-                    horizontal: "left",
-                }}
-            >
-                <Box sx={{ width: 350, height: "90vh" }}>
-                    {MenuItems.map((item) => (
-                        <MenuItem
-                            sx={{
-                                cursor: "pointer",
-                                fontSize: "14px",
-                            }}
-                        >
-                            {item.Name}
-                        </MenuItem>
-                    ))}
-                </Box>
-            </Menu> */}
+
         </AppBar >
     );
 };
