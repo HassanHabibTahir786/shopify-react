@@ -44,10 +44,7 @@ export default function TemporaryDrawer() {
         setExpanded(isExpanded ? panel : false);
     };
 
-    // const toggleDrawer = ((anchor, open) => (event) => {
-    //     setState({ ...state, [anchor]: open });
-    // }
-    // )
+   
     const toggleDrawer = (anchor, open) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
             return;
@@ -56,14 +53,14 @@ export default function TemporaryDrawer() {
         setState({ ...state, [anchor]: open });
     };
 
-    const [open, setOpen] = React.useState({
-        home: false,
-        shop: false,
-        features: false,
-        lookbook: false,
-        pages: false,
-        blog: false
-    });
+    // const [open, setOpen] = React.useState({
+    //     home: false,
+    //     shop: false,
+    //     features: false,
+    //     lookbook: false,
+    //     pages: false,
+    //     blog: false
+    // });
 
 
 
@@ -83,35 +80,33 @@ export default function TemporaryDrawer() {
                 sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', padding: 0 }}
                 component="nav"
                 aria-labelledby="nested-list-subheader"
-
             >
-
-
                 <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} disableGutters={true}	>
                     <AccordionSummary
                         disableGutters={true}
-                        expandIcon={<ExpandMoreIcon />}
+                        // expandIcon={<ExpandMoreIcon />}
+                        expandIcon={expanded === 'panel1' ? <RemoveIcon /> : <AddIcon />}
                         aria-controls="panel1bh-content"
                         id="panel1bh-header"
                     >
-                        <Typography sx={{ width: '33%', flexShrink: 0, }}>
+                        <Typography sx={{ width: '33%', flexShrink: 0, fontSize: "13px" }}>
                             HOME
                         </Typography>
                     </AccordionSummary>
                     <AccordionDetails sx={{ bgcolor: "#f2f2f2", padding: "0" }}>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             home1
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             home2
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             home3
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             home4
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             home5
                         </Typography>
 
@@ -120,27 +115,27 @@ export default function TemporaryDrawer() {
                 <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')} disableGutters={true}>
                     <AccordionSummary
                         disableGutters={true}
-                        expandIcon={<ExpandMoreIcon />}
+                        expandIcon={expanded === 'panel2' ? <RemoveIcon /> : <AddIcon />}
                         aria-controls="panel2bh-content"
                         id="panel2bh-header"
                     >
-                        <Typography sx={{ width: '33%', flexShrink: 0 }}>SHOP</Typography>
+                        <Typography sx={{ width: '33%', flexShrink: 0, fontSize: "13px" }}>SHOP</Typography>
 
                     </AccordionSummary>
                     <AccordionDetails sx={{ bgcolor: "#f2f2f2", padding: "0" }}>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             shop1
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             shop2
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             shop3
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             shop4
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             shop5
                         </Typography>
                     </AccordionDetails>
@@ -148,29 +143,29 @@ export default function TemporaryDrawer() {
                 <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')} disableGutters={true}>
                     <AccordionSummary
                         disableGutters={true}
-                        expandIcon={<ExpandMoreIcon />}
+                        expandIcon={expanded === 'panel3' ? <RemoveIcon /> : <AddIcon />}
                         aria-controls="panel3bh-content"
                         id="panel3bh-header"
                     >
-                        <Typography sx={{ width: '33%', flexShrink: 0 }}>
+                        <Typography sx={{ width: '33%', flexShrink: 0, fontSize: "13px" }}>
                             FEATURES
                         </Typography>
 
                     </AccordionSummary>
                     <AccordionDetails sx={{ bgcolor: "#f2f2f2", padding: "0" }}>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             feature1
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             feature2
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             feature3
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             feature4
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             feature5
                         </Typography>
                     </AccordionDetails>
@@ -178,26 +173,26 @@ export default function TemporaryDrawer() {
                 <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')} disableGutters={true}>
                     <AccordionSummary
                         disableGutters={true}
-                        expandIcon={<ExpandMoreIcon />}
+                        expandIcon={expanded === 'panel4' ? <RemoveIcon /> : <AddIcon />}
                         aria-controls="panel4bh-content"
                         id="panel4bh-header"
                     >
-                        <Typography sx={{ width: '33%', flexShrink: 0 }}>LOOKBOOK</Typography>
+                        <Typography sx={{ width: '33%', flexShrink: 0, fontSize: "13px" }}>LOOKBOOK</Typography>
                     </AccordionSummary>
                     <AccordionDetails sx={{ bgcolor: "#f2f2f2", padding: "0" }}>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             lookbook1
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             lookbook2
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             lookbook3
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             lookbook4
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             lookbook5
                         </Typography>
                     </AccordionDetails>
@@ -205,26 +200,26 @@ export default function TemporaryDrawer() {
                 <Accordion expanded={expanded === 'panel5'} onChange={handleChange('panel5')} disableGutters={true}>
                     <AccordionSummary
                         disableGutters={true}
-                        expandIcon={<ExpandMoreIcon />}
+                        expandIcon={expanded === 'panel5' ? <RemoveIcon /> : <AddIcon />}
                         aria-controls="panel4bh-content"
                         id="panel4bh-header"
                     >
-                        <Typography sx={{ width: '33%', flexShrink: 0 }}>PAGES</Typography>
+                        <Typography sx={{ width: '33%', flexShrink: 0, fontSize: "13px" }}>PAGES</Typography>
                     </AccordionSummary>
                     <AccordionDetails sx={{ bgcolor: "#f2f2f2", padding: "0" }}>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             page1
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             page2
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             page3
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             page4
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             page5
                         </Typography>
                     </AccordionDetails>
@@ -232,26 +227,26 @@ export default function TemporaryDrawer() {
                 <Accordion expanded={expanded === 'panel6'} onChange={handleChange('panel6')} disableGutters={true}>
                     <AccordionSummary
                         disableGutters={true}
-                        expandIcon={<ExpandMoreIcon />}
+                        expandIcon={expanded === 'panel6' ? <RemoveIcon /> : <AddIcon />}
                         aria-controls="panel4bh-content"
                         id="panel4bh-header"
                     >
-                        <Typography sx={{ width: '33%', flexShrink: 0 }}>BLOG</Typography>
+                        <Typography sx={{ width: '33%', flexShrink: 0, fontSize: "13px" }}>BLOG</Typography>
                     </AccordionSummary>
                     <AccordionDetails sx={{ bgcolor: "#f2f2f2", padding: "0" }}>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             blog1
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             blog2
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             blog3
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             blog4
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" }}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
                             blog5
                         </Typography>
                     </AccordionDetails>
