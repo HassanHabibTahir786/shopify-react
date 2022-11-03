@@ -94,19 +94,19 @@ export default function TemporaryDrawer() {
                         </Typography>
                     </AccordionSummary>
                     <AccordionDetails sx={{ bgcolor: "#f2f2f2", padding: "0" }}>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             home1
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             home2
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             home3
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             home4
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             home5
                         </Typography>
 
@@ -123,19 +123,19 @@ export default function TemporaryDrawer() {
 
                     </AccordionSummary>
                     <AccordionDetails sx={{ bgcolor: "#f2f2f2", padding: "0" }}>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             shop1
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             shop2
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             shop3
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             shop4
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             shop5
                         </Typography>
                     </AccordionDetails>
@@ -153,19 +153,19 @@ export default function TemporaryDrawer() {
 
                     </AccordionSummary>
                     <AccordionDetails sx={{ bgcolor: "#f2f2f2", padding: "0" }}>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             feature1
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             feature2
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             feature3
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             feature4
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             feature5
                         </Typography>
                     </AccordionDetails>
@@ -180,19 +180,19 @@ export default function TemporaryDrawer() {
                         <Typography sx={{ width: '33%', flexShrink: 0, fontSize: "13px" }}>LOOKBOOK</Typography>
                     </AccordionSummary>
                     <AccordionDetails sx={{ bgcolor: "#f2f2f2", padding: "0" }}>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             lookbook1
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             lookbook2
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             lookbook3
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             lookbook4
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             lookbook5
                         </Typography>
                     </AccordionDetails>
@@ -207,19 +207,19 @@ export default function TemporaryDrawer() {
                         <Typography sx={{ width: '33%', flexShrink: 0, fontSize: "13px" }}>PAGES</Typography>
                     </AccordionSummary>
                     <AccordionDetails sx={{ bgcolor: "#f2f2f2", padding: "0" }}>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             page1
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             page2
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             page3
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             page4
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             page5
                         </Typography>
                     </AccordionDetails>
@@ -234,19 +234,19 @@ export default function TemporaryDrawer() {
                         <Typography sx={{ width: '33%', flexShrink: 0, fontSize: "13px" }}>BLOG</Typography>
                     </AccordionSummary>
                     <AccordionDetails sx={{ bgcolor: "#f2f2f2", padding: "0" }}>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             blog1
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             blog2
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             blog3
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             blog4
                         </Typography>
-                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer"}}>
+                        <Typography sx={{ borderTop: "1px solid #c3bfbf", paddingY: "6px", paddingLeft: "30px" , cursor:"pointer", transition:"all .5s", "&:hover":{bgcolor:"#d7d0d0"}}}>
                             blog5
                         </Typography>
                     </AccordionDetails>

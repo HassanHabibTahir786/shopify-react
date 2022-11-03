@@ -53,7 +53,7 @@ const Navbar = () => {
             }}
             position={"static"} >
             <StyledToolbar>
-                <TemporaryDrawer />
+                {/* <TemporaryDrawer /> */}
 
 
                 <Box sx={{ display: { xs: "flex", md: "none" }, alignItems: "center", }}>
