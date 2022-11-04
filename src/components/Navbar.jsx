@@ -22,6 +22,7 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import IconButton from '@mui/material/IconButton';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import TemporaryDrawer from "./Drawer";
+import { grey } from '@mui/material/colors';
 
 
 
@@ -29,7 +30,7 @@ const Navbar = () => {
     const StyledToolbar = styled(Toolbar)({
         display: "flex",
         justifyContent: "space-between",
-        alignItems: "center"
+        alignItems: "center",
     });
     const SocialBox = styled(Box)({
         display: "flex",
@@ -44,11 +45,11 @@ const Navbar = () => {
         { Name: "PAGES", Link: "#" },
         { Name: "BLOG", Link: "#" },
     ];
-    const [manue, showManue] = useState(null);
-    console.log(manue);
     return (
         <AppBar
             sx={{
+                color: "black",
+                backgroundColor: grey[200],
                 px: { xs: 0, md: 1, lg: 2 }
             }}
             position={"static"} >
@@ -75,89 +76,496 @@ const Navbar = () => {
 
 
 
-                    <Box sx={{ display: { xs: "none", sm: "none", md: "flex", }, marginRight: { md: 2, lg: 6 }, alignItems: "center", gap: { md: 2, lg: 4 } }}>
+                    <Box sx={{
+                        display: { xs: "none", sm: "none", md: "flex", },
+                        marginRight: { md: 2, lg: 6 },
+                        alignItems: "center",
+                        gap: { md: 2, lg: 4 }
+                    }}>
 
 
-                        {MenuItems.map((item, ind) => (
-                            <Box
-                                onMouseOver={() => showManue(ind)}
-                                onMouseLeave={() => showManue(null)}
+                        <Box
+                            sx={{
+                                padding: "20px 0",
+                                position: "relative", "&:hover": {
+                                    "& .submanue": {
+                                        display: 'block',
+                                    }
+                                }
+                            }}>
+                            <Typography
+                                className="main"
+                                sx={{
+                                    cursor: "pointer",
+                                    fontSize: { md: "10px", lg: "12px" },
+                                    display: 'flex',
+                                    alignItems: 'center',
+
+                                }}
                             >
-                                <Typography
-                                    sx={{
-                                        cursor: "pointer",
-                                        fontSize: { md: "10px", lg: "12px" },
-                                        display: 'flex',
-                                        alignItems: 'center',
+                                HOME
+                                <ExpandMoreIcon />
 
-                                    }}
-                                >
-                                    {item.Name}
-                                    <ExpandMoreIcon />
+                            </Typography>
+                            <Box
+                                className="submanue"
+                                sx={{
+                                    width: "150px",
+                                    marginTop: "20px",
+                                    display: "none",
+                                    position: 'absolute',
+                                    zIndex: '999',
+                                    left: 0,
+                                    border: "1px solid grey"
+                                }} >
+                                <div style={{
+                                    content: "",
+                                    position: 'absolute',
+                                    width: '40px',
+                                    height: '40px',
+                                    transform: 'rotate(45deg)',
+                                    backgroundColor: 'white',
+                                    marginLeft: '20px',
+                                    border: '1px solid grey',
+                                    zIndex: '-1',
+                                }} />
+                                <Paper >
 
-                                </Typography>
-                                {manue === ind ?
-                                    <Box 
-                                     sx={{width:"200px", position:'absolute', transition: 'all 0.3s ease',}} >
-                                        <div style={{
-                                            content: "",
-                                            position: 'absolute',
-                                            width: '40px',
-                                            height: '40px',
-                                            transform: 'rotate(45deg)',
-                                            backgroundColor: 'white',
-                                            marginLeft: '20px',
-                                            border: '1px solid',
-                                        }} />
-                                        <Paper
-                                            sx={{ width: "200px", maxWidth: '100%',}}>
+                                    <MenuList>
+                                        <MenuItem>
 
-                                            <MenuList>
-                                                <MenuItem>
+                                            <ListItemText>Home1</ListItemText>
 
-                                                    <ListItemText>One</ListItemText>
+                                        </MenuItem>
+                                        <MenuItem>
 
-                                                </MenuItem>
-                                                <MenuItem>
+                                            <ListItemText>Home2</ListItemText>
 
-                                                    <ListItemText>two</ListItemText>
+                                        </MenuItem>
+                                        <MenuItem>
 
-                                                </MenuItem>
-                                                <MenuItem>
+                                            <ListItemText>Home3</ListItemText>
 
-                                                    <ListItemText>three</ListItemText>
+                                        </MenuItem>
+                                        <MenuItem>
 
-                                                </MenuItem>
-                                                <MenuItem>
+                                            <ListItemText>Home4</ListItemText>
 
-                                                    <ListItemText>four</ListItemText>
+                                        </MenuItem>
+                                        <MenuItem>
 
-                                                </MenuItem>
-                                                <MenuItem>
+                                            <ListItemText>Home5</ListItemText>
 
-                                                    <ListItemText>five</ListItemText>
-
-                                                </MenuItem>
-                                            </MenuList>
-                                        </Paper>
-                                    </Box>
-                                    :
-                                    null}
-                                    
-
+                                        </MenuItem>
+                                    </MenuList>
+                                </Paper>
                             </Box>
-                        ))}
 
 
 
+                        </Box>
+                        <Box
+                            sx={{
+                                padding: "20px 0",
+                                position: "relative", "&:hover": {
+                                    "& .submanue": {
+                                        display: 'block',
+                                    }
+                                }
+                            }}>
+                            <Typography
+                                className="main"
+                                sx={{
+                                    cursor: "pointer",
+                                    fontSize: { md: "10px", lg: "12px" },
+                                    display: 'flex',
+                                    alignItems: 'center',
 
+                                }}
+                            >
+                                SHOP
+                                <ExpandMoreIcon />
+
+                            </Typography>
+                            <Box
+                                className="submanue"
+                                sx={{
+                                    width: "150px",
+                                    marginTop: "20px",
+                                    display: "none",
+                                    position: 'absolute',
+                                    zIndex: '999',
+                                    left: 0,
+                                    border: "1px solid grey"
+                                }} >
+                                <div style={{
+                                    content: "",
+                                    position: 'absolute',
+                                    width: '40px',
+                                    height: '40px',
+                                    transform: 'rotate(45deg)',
+                                    backgroundColor: 'white',
+                                    marginLeft: '20px',
+                                    border: '1px solid grey',
+                                    zIndex: '-1',
+                                }} />
+                                <Paper>
+
+                                    <MenuList>
+                                        <MenuItem>
+
+                                            <ListItemText>shop1</ListItemText>
+
+                                        </MenuItem>
+                                        <MenuItem>
+
+                                            <ListItemText>shop2</ListItemText>
+
+                                        </MenuItem>
+                                        <MenuItem>
+
+                                            <ListItemText>shop3</ListItemText>
+
+                                        </MenuItem>
+                                        <MenuItem>
+
+                                            <ListItemText>shop4</ListItemText>
+
+                                        </MenuItem>
+                                        <MenuItem>
+
+                                            <ListItemText>shop5</ListItemText>
+
+                                        </MenuItem>
+                                    </MenuList>
+                                </Paper>
+                            </Box>
+                            {/* :
+                                    null} */}
+
+
+                        </Box>
+                        <Box
+                            sx={{
+                                padding: "20px 0",
+                                position: "relative", "&:hover": {
+                                    "& .submanue": {
+                                        display: 'block',
+                                    }
+                                }
+                            }}>
+                            <Typography
+                                className="main"
+                                sx={{
+                                    cursor: "pointer",
+                                    fontSize: { md: "10px", lg: "12px" },
+                                    display: 'flex',
+                                    alignItems: 'center',
+
+                                }}
+                            >
+                                FEATURES
+                                <ExpandMoreIcon />
+
+                            </Typography>
+                            <Box
+                                className="submanue"
+                                sx={{
+                                    width: "150px",
+                                    marginTop: "20px",
+                                    display: "none",
+                                    position: 'absolute',
+                                    zIndex: '999',
+                                    left: 0,
+                                    border: "1px solid grey"
+                                }} >
+                                <div style={{
+                                    content: "",
+                                    position: 'absolute',
+                                    width: '40px',
+                                    height: '40px',
+                                    transform: 'rotate(45deg)',
+                                    backgroundColor: 'white',
+                                    marginLeft: '20px',
+                                    border: '1px solid grey',
+                                    zIndex: '-1',
+                                }} />
+                                <Paper>
+
+                                    <MenuList>
+                                        <MenuItem>
+
+                                            <ListItemText>feature1</ListItemText>
+
+                                        </MenuItem>
+                                        <MenuItem>
+
+                                            <ListItemText>feature2</ListItemText>
+
+                                        </MenuItem>
+                                        <MenuItem>
+
+                                            <ListItemText>feature3</ListItemText>
+
+                                        </MenuItem>
+                                        <MenuItem>
+
+                                            <ListItemText>feature4</ListItemText>
+
+                                        </MenuItem>
+                                        <MenuItem>
+
+                                            <ListItemText>feature5</ListItemText>
+
+                                        </MenuItem>
+                                    </MenuList>
+                                </Paper>
+                            </Box>
+
+
+                        </Box>
+                        <Box
+                            sx={{
+                                padding: "20px 0",
+                                position: "relative", "&:hover": {
+                                    "& .submanue": {
+                                        display: 'block',
+                                    }
+                                }
+                            }}>
+                            <Typography
+                                className="main"
+                                sx={{
+                                    cursor: "pointer",
+                                    fontSize: { md: "10px", lg: "12px" },
+                                    display: 'flex',
+                                    alignItems: 'center',
+
+                                }}
+                            >
+                                LOOKBOOK
+                                <ExpandMoreIcon />
+
+                            </Typography>
+                            <Box
+                                className="submanue"
+                                sx={{
+                                    width: "150px",
+                                    marginTop: "20px",
+                                    display: "none",
+                                    position: 'absolute',
+                                    zIndex: '999',
+                                    left: 0,
+                                    border: "1px solid grey"
+                                }} >
+                                <div style={{
+                                    content: "",
+                                    position: 'absolute',
+                                    width: '40px',
+                                    height: '40px',
+                                    transform: 'rotate(45deg)',
+                                    backgroundColor: 'white',
+                                    marginLeft: '20px',
+                                    border: '1px solid grey',
+                                    zIndex: '-1',
+                                }} />
+                                <Paper>
+
+                                    <MenuList>
+                                        <MenuItem>
+
+                                            <ListItemText>lookbook1</ListItemText>
+
+                                        </MenuItem>
+                                        <MenuItem>
+
+                                            <ListItemText>lookbook2</ListItemText>
+
+                                        </MenuItem>
+                                        <MenuItem>
+
+                                            <ListItemText>lookbook3</ListItemText>
+
+                                        </MenuItem>
+                                        <MenuItem>
+
+                                            <ListItemText>lookbook4</ListItemText>
+
+                                        </MenuItem>
+                                        <MenuItem>
+
+                                            <ListItemText>lookbook5</ListItemText>
+
+                                        </MenuItem>
+                                    </MenuList>
+                                </Paper>
+                            </Box>
+
+
+                        </Box>
+                        <Box
+                            sx={{
+                                padding: "20px 0",
+                                position: "relative", "&:hover": {
+                                    "& .submanue": {
+                                        display: 'block',
+                                    }
+                                }
+                            }}>
+                            <Typography
+                                className="main"
+                                sx={{
+                                    cursor: "pointer",
+                                    fontSize: { md: "10px", lg: "12px" },
+                                    display: 'flex',
+                                    alignItems: 'center',
+
+                                }}
+                            >
+                                PAGES
+                                <ExpandMoreIcon />
+
+                            </Typography>
+                            <Box
+                                className="submanue"
+                                sx={{
+                                    width: "150px",
+                                    marginTop: "20px",
+                                    display: "none",
+                                    position: 'absolute',
+                                    zIndex: '999',
+                                    left: 0,
+                                    border: "1px solid grey"
+                                }} >
+                                <div style={{
+                                    content: "",
+                                    position: 'absolute',
+                                    width: '40px',
+                                    height: '40px',
+                                    transform: 'rotate(45deg)',
+                                    backgroundColor: 'white',
+                                    marginLeft: '20px',
+                                    border: '1px solid grey',
+                                    zIndex: '-1',
+                                }} />
+                                <Paper>
+
+                                    <MenuList>
+                                        <MenuItem>
+
+                                            <ListItemText>page1</ListItemText>
+
+                                        </MenuItem>
+                                        <MenuItem>
+
+                                            <ListItemText>page2</ListItemText>
+
+                                        </MenuItem>
+                                        <MenuItem>
+
+                                            <ListItemText>page3</ListItemText>
+
+                                        </MenuItem>
+                                        <MenuItem>
+
+                                            <ListItemText>page4</ListItemText>
+
+                                        </MenuItem>
+                                        <MenuItem>
+
+                                            <ListItemText>page5</ListItemText>
+
+                                        </MenuItem>
+                                    </MenuList>
+                                </Paper>
+                            </Box>
+
+
+                        </Box>
+                        <Box
+                            sx={{
+                                padding: "20px 0",
+                                position: "relative", "&:hover": {
+                                    "& .submanue": {
+                                        display: 'block',
+                                    }
+                                }
+                            }}>
+                            <Typography
+                                className="main"
+                                sx={{
+                                    cursor: "pointer",
+                                    fontSize: { md: "10px", lg: "12px" },
+                                    display: 'flex',
+                                    alignItems: 'center',
+
+                                }}
+                            >
+                                BLOG
+                                <ExpandMoreIcon />
+
+                            </Typography>
+                            <Box
+                                className="submanue"
+                                sx={{
+                                    width: "150px",
+                                    marginTop: "20px",
+                                    display: "none",
+                                    position: 'absolute',
+                                    zIndex: '999',
+                                    left: 0,
+                                    border: "1px solid grey"
+                                }} >
+                                <div style={{
+                                    content: "",
+                                    position: 'absolute',
+                                    width: '40px',
+                                    height: '40px',
+                                    transform: 'rotate(45deg)',
+                                    backgroundColor: 'white',
+                                    marginLeft: '20px',
+                                    border: '1px solid grey',
+                                    zIndex: '-1',
+                                }} />
+                                <Paper>
+
+                                    <MenuList>
+                                        <MenuItem>
+
+                                            <ListItemText>blog1</ListItemText>
+
+                                        </MenuItem>
+                                        <MenuItem>
+
+                                            <ListItemText>blog2</ListItemText>
+
+                                        </MenuItem>
+                                        <MenuItem>
+
+                                            <ListItemText>blog3</ListItemText>
+
+                                        </MenuItem>
+                                        <MenuItem>
+
+                                            <ListItemText>blog4</ListItemText>
+
+                                        </MenuItem>
+                                        <MenuItem>
+
+                                            <ListItemText>blog5</ListItemText>
+
+                                        </MenuItem>
+                                    </MenuList>
+                                </Paper>
+                            </Box>
+                        </Box>
                     </Box>
-                    <SocialBox>
-                        <SearchIcon sx={{ display: { xs: "none", md: "flex", cursor: "pointer", fontSize: "20px" } }} />
-                        <SettingsIcon sx={{ cursor: "pointer", fontSize: "20px" }} />
-                        <FavoriteBorderIcon sx={{ display: { xs: "none", md: "flex", cursor: "pointer", fontSize: "20px" } }} />
+                    <SocialBox sx={{ padding: "20px 0" }}>
+                        <SearchIcon sx={{ display: { xs: "none", md: "flex", cursor: "pointer", fontSize: "20px", } }} />
+                        <SettingsIcon sx={{ cursor: "pointer", fontSize: "20px", }} />
+                        <FavoriteBorderIcon sx={{ display: { xs: "none", md: "flex", cursor: "pointer", fontSize: "20px", } }} />
                         <Badge color="secondary" badgeContent={0} showZero sx={{ cursor: "pointer", }}>
-                            <ShoppingBagIcon sx={{ fontSize: "20px" }} />
+                            <ShoppingBagIcon sx={{ fontSize: "20px", }} />
                         </Badge>
                     </SocialBox>
                 </Box>
