@@ -1,51 +1,70 @@
 import React from 'react'
-import { Box, Grid, Typography } from '@mui/material'
-import { green, pink } from '@mui/material/colors';
+import { Box, Grid, Typography, styled } from '@mui/material'
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
-import FolderIcon from '@mui/icons-material/Folder';
-import PageviewIcon from '@mui/icons-material/Pageview';
-import AssignmentIcon from '@mui/icons-material/Assignment';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { FaFacebookF } from 'react-icons/fa';
 
 const SiteOneFooter = () => {
+
+    const CommenFooterSubheadingNoHover = styled(Typography)({
+        fontSize: "16px",
+        marginBottom: "10px",
+        color: "#fffc",
+        fontWeight: "300"
+
+    })
+
+    const CommenFooterSubheadingHover = styled(Typography)({
+        cursor: "pointer",
+        transition: "all .5s",
+        "&:hover": { color: "white" },
+        fontSize: "16px",
+        marginBottom: "10px",
+        color: "#fffc",
+        fontWeight: "300"
+
+
+
+    })
+
+
     return (
-        <Box px={3} pb={4} sx={{ backgroundColor: "black", color: "white" }}>
+        <Box px={3} pb={4} sx={{ backgroundColor: "black", color: "white" }} >
             <Grid container>
                 <Grid item xs={12} md={6} lg={3}>
                     <Box pt={{ xs: 5, md: 7 }}>
                         <Typography sx={{ fontSize: "19px", marginBottom: "20px" }}>Company</Typography>
 
-                        <Typography sx={{ fontSize: "16px", marginBottom: "10px", color: "#fffc", cursor: "pointer", transition: "all .5s", "&:hover": { color: "white" } }}>About Us</Typography>
-                        <Typography sx={{ fontSize: "16px", marginBottom: "10px", color: "#fffc", cursor: "pointer", transition: "all .5s", "&:hover": { color: "white" } }}>We're Hiring</Typography>
-                        <Typography sx={{ fontSize: "16px", marginBottom: "10px", color: "#fffc", cursor: "pointer", transition: "all .5s", "&:hover": { color: "white" } }}>Press Mentions</Typography>
-                        <Typography sx={{ fontSize: "16px", marginBottom: "10px", color: "#fffc", cursor: "pointer", transition: "all .5s", "&:hover": { color: "white" } }}>Current Gallery Show</Typography>
-                        <Typography sx={{ fontSize: "16px", marginBottom: "10px", color: "#fffc", cursor: "pointer", transition: "all .5s", "&:hover": { color: "white" } }}>Past Gallery Shows</Typography>
-                        <Typography sx={{ fontSize: "16px", marginBottom: "10px", color: "#fffc", cursor: "pointer", transition: "all .5s", "&:hover": { color: "white" } }}>Artist & Designer Submissions</Typography>
-                        <Typography sx={{ fontSize: "16px", marginBottom: "10px", color: "#fffc", cursor: "pointer", transition: "all .5s", "&:hover": { color: "white" } }}>Blog</Typography>
-                        <Typography sx={{ fontSize: "16px", marginBottom: "10px", color: "#fffc", cursor: "pointer", transition: "all .5s", "&:hover": { color: "white" } }}>Events</Typography>
+                        <CommenFooterSubheadingHover>About Us</CommenFooterSubheadingHover>
+                        <CommenFooterSubheadingHover>We're Hiring</CommenFooterSubheadingHover>
+                        <CommenFooterSubheadingHover>Press Mentions</CommenFooterSubheadingHover>
+                        <CommenFooterSubheadingHover>Current Gallery Show</CommenFooterSubheadingHover>
+                        <CommenFooterSubheadingHover>Past Gallery Shows</CommenFooterSubheadingHover>
+                        <CommenFooterSubheadingHover>Artist & Designer Submissions</CommenFooterSubheadingHover>
+                        <CommenFooterSubheadingHover>Blog</CommenFooterSubheadingHover>
+                        <CommenFooterSubheadingHover>Events</CommenFooterSubheadingHover>
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={6} lg={3}>
                     <Box pt={{ xs: 5, md: 7 }}>
                         <Typography sx={{ fontSize: "19px", marginBottom: "20px" }}>Customer Care</Typography>
-                        <Typography sx={{ fontSize: "16px", marginBottom: "10px", color: "#fffc", cursor: "pointer", transition: "all .5s", "&:hover": { color: "white" } }}>Contact Us</Typography>
-                        <Typography sx={{ fontSize: "16px", marginBottom: "10px", color: "#fffc", cursor: "pointer", transition: "all .5s", "&:hover": { color: "white" } }}>Customer Service</Typography>
-                        <Typography sx={{ fontSize: "16px", marginBottom: "10px", color: "#fffc", cursor: "pointer", transition: "all .5s", "&:hover": { color: "white" } }}>Privacy Policy</Typography>
-                        <Typography sx={{ fontSize: "16px", marginBottom: "10px", color: "#fffc", cursor: "pointer", transition: "all .5s", "&:hover": { color: "white" } }}>Don't sell my personal information</Typography>
-                        <Typography sx={{ fontSize: "16px", marginBottom: "10px", color: "#fffc", cursor: "pointer", transition: "all .5s", "&:hover": { color: "white" } }}>Log In</Typography>
+                        <CommenFooterSubheadingHover>Contact Us</CommenFooterSubheadingHover>
+                        <CommenFooterSubheadingHover>Customer Service</CommenFooterSubheadingHover>
+                        <CommenFooterSubheadingHover>Privacy Policy</CommenFooterSubheadingHover>
+                        <CommenFooterSubheadingHover>Don't sell my personal information</CommenFooterSubheadingHover>
+                        <CommenFooterSubheadingHover>Log In</CommenFooterSubheadingHover>
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={6} lg={3}>
                     <Box pt={{ xs: 5, md: 7 }}>
                         <Typography sx={{ fontSize: "19px", marginBottom: "20px" }}>Contact</Typography>
-                        <Typography sx={{ fontSize: "16px", marginBottom: "10px", color: "#fffc", cursor: "pointer", transition: "all .5s", "&:hover": { color: "white" } }}>customerservice@raredevice.net</Typography>
-                        <Typography sx={{ fontSize: "16px", marginBottom: "10px", color: "#fffc", cursor: "pointer", transition: "all .5s", "&:hover": { color: "white" } }}>415-863-3969</Typography>
-                        <Typography sx={{ fontSize: "16px", marginBottom: "10px", color: "#fffc" }}>600 Divisadero St.</Typography>
-                        <Typography sx={{ fontSize: "16px", marginBottom: "10px", color: "#fffc" }}>San Francisco California</Typography>
-                        <Typography sx={{ fontSize: "16px", marginBottom: "10px", color: "#fffc" }}>94117 United States</Typography>
+                        <CommenFooterSubheadingHover>customerservice@raredevice.net</CommenFooterSubheadingHover>
+                        <CommenFooterSubheadingHover>415-863-3969</CommenFooterSubheadingHover>
+                        <CommenFooterSubheadingNoHover>600 Divisadero St.</CommenFooterSubheadingNoHover>
+                        <CommenFooterSubheadingNoHover>San Francisco California</CommenFooterSubheadingNoHover>
+                        <CommenFooterSubheadingNoHover>94117 United States</CommenFooterSubheadingNoHover>
                         <Stack direction="row" spacing={2}>
 
                             <Avatar sx={{
@@ -79,17 +98,17 @@ const SiteOneFooter = () => {
                 <Grid item xs={12} md={6} lg={3}>
                     <Box pt={{ xs: 5, md: 7 }}>
                         <Typography sx={{ fontSize: "19px", marginBottom: "20px" }}>Store Hours</Typography>
-                        <Typography sx={{ fontSize: "16px", marginBottom: "10px", color: "#fffc" }}>Monday to Saturday: 11am – 7pm</Typography>
-                        <Typography sx={{ fontSize: "16px", marginBottom: "10px", color: "#fffc" }}>Sunday: 11am – 6pm</Typography>
+                        <CommenFooterSubheadingNoHover>Monday to Saturday: 11am – 7pm</CommenFooterSubheadingNoHover>
+                        <CommenFooterSubheadingNoHover>Sunday: 11am – 6pm</CommenFooterSubheadingNoHover>
 
                     </Box>
                 </Grid>
             </Grid>
-            <Box sx={{ width: "100%", display: "flex", justifyContent: { xs: "center", md: "end" } }}>
-                <Typography sx={{ fontSize: "12px" }} pr={5}>Ecommerce Software by Shopify </Typography>
-                <Typography sx={{ fontSize: "12px" }}>© 2022, Rare Device </Typography>
+            <Box mt={5} sx={{ width: "100%", display: "flex", justifyContent: { xs: "center", md: "end" } }}>
+                <Typography sx={{ fontSize: "15px", fontWeight:"300" }} pr={5}>Ecommerce Software by Shopify </Typography>
+                <Typography sx={{ fontSize: "15px", fontWeight:"300" }}>© 2022, Rare Device </Typography>
             </Box>
-        </Box>
+        </Box >
     )
 }
 

@@ -7,27 +7,13 @@ import gallery from '../images/hiringGallery/gallery.webp'
 import { styled, createTheme } from '@mui/material/styles';
 import { deepPurple } from '@mui/material/colors';
 const HiringGallery = () => {
-    const customTheme = createTheme({
-        palette: {
-            primary: {
-                main: deepPurple[500],
-            },
-        },
-    });
-
-    //     const StyledAvatar = styled(Box)`
-    //   ${({ theme }) => `
-    //   cursor: pointer;
-    //   background-color: ${theme.palette.primary.main};
-    //   transition: ${theme.transitions.create(['background-color', 'transform'], {
-    //         duration: theme.transitions.duration.standard,
-    //     })};
-    //   &:hover {
-    //     background-color: black;
-    //     transform: scale(1.3);
-    //   }
-    //   `}
-    // `;
+    // const customTheme = createTheme({
+    //     palette: {
+    //         primary: {
+    //             main: deepPurple[500],
+    //         },
+    //     },
+    // });
     return (
         <Box mb={5}>
             <Grid
@@ -44,10 +30,13 @@ const HiringGallery = () => {
                             backgroundPosition: "center",
                             backgroundRepeat: "no-repeat",
                             backgroundSize: "cover",
+                             
+                            transition: "opacity 2s",
                             // backgroundSize: "100% 100%",
 
                             "&:hover": {
-                                backgroundBlendMode: "darken",
+                                // background: `rgba(0,0,0,0.999) url(${hiring})`,
+                                opacity:0.5
                             }
                         }}>
                         <Box>
@@ -60,7 +49,6 @@ const HiringGallery = () => {
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={6} >
-                    {/* <ThemeProvider theme={customTheme}> */}
 
                     <Box
                         pl={5} pb={5} sx={{
@@ -83,7 +71,6 @@ const HiringGallery = () => {
 
 
                     </Box>
-                    {/* </ThemeProvider> */}
                 </Grid>
 
 
