@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Typography, Box, styled } from '@mui/material'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import { grey } from '@mui/material/colors';
 
 import Slider from "react-slick";
 
@@ -30,8 +30,10 @@ const SliderNewBox = styled(Box)({
 
 const GetGrip = () => {
 
-    const [green, setGreen] = useState(greenCatcher1);
-    const [white, setWhite] = useState(pinkwhiteCatcher1);
+    const [imgOne, setImgOne] = useState(greenCatcher1);
+    const [imgTwo, setImgTwo] = useState(pinkwhiteCatcher1);
+    const [imgThree, setImgThree] = useState(pinkCatcher1);
+    const [imgFour, setImgFour] = useState(whiteCatcher1);
 
     const settings = {
         speed: 500,
@@ -66,59 +68,73 @@ const GetGrip = () => {
         ]
     };
     return (
-        <Box my={2}>
-            <Typography mt={5} mb={2} align={'center'} sx={{ fontSize: "30px" }}>
-                Get a Grip!
-            </Typography>
+        <Box>
+            <Box my={2}>
+                <Typography mt={5} mb={2} align={'center'} sx={{ fontSize: "30px" }}>
+                    Get a Grip!
+                </Typography>
 
-            <Slider {...settings}>
-                <div >
-                    <StyledSliderBox  >
-                        <SliderNewBox>
-                            <Typography sx={{ padding: '7px 20px' }}>New</Typography>
+                <Slider {...settings}>
+                    <div >
+                        <StyledSliderBox  >
+                            <SliderNewBox>
+                                <Typography sx={{ padding: '7px 20px' }}>New</Typography>
 
-                        </SliderNewBox>
+                            </SliderNewBox>
 
-                        <img src={green} alt="" srcset="" style={{ width: "100%", cursor: "pointer" }} onMouseOver={() => setGreen(greenCatcher2)} onMouseOut={() => setGreen(greenCatcher1)} />
-                        <Typography align="center" sx={{ fontSize: "22px" }}>Tiger's Eye Hair Claw - Green</Typography>
-                        <Typography align="center" sx={{ fontSize: "20px" }}>$12.00</Typography>
-                    </StyledSliderBox>
-                </div>
+                            <img src={imgOne} alt="" srcset="" style={{ width: "100%", cursor: "pointer" }} onMouseOver={() => setImgOne(greenCatcher2)} onMouseOut={() => setImgOne(greenCatcher1)} />
+                            <Typography align="center" sx={{ fontSize: "22px" }}>Tiger's Eye Hair Claw - Green</Typography>
+                            <Typography align="center" sx={{ fontSize: "20px" }}>$12.00</Typography>
+                        </StyledSliderBox>
+                    </div>
 
-                <div >
-                    <StyledSliderBox>
-                        <SliderNewBox>
-                            <Typography sx={{ padding: '7px 20px' }}>New</Typography>
+                    <div >
+                        <StyledSliderBox>
+                            <SliderNewBox>
+                                <Typography sx={{ padding: '7px 20px' }}>New</Typography>
 
-                        </SliderNewBox>
-                        <img src={white} alt="" srcset="" style={{ width: "100%" , cursor: "pointer"}} onMouseOver={() => setWhite(pinkwhiteCatcher2)} onMouseOut={() => setWhite(pinkwhiteCatcher1)} />
-                        <Typography align="center" sx={{ fontSize: "22px" }}>Tiger's Eye Hair Claw - Green</Typography>
-                        <Typography align="center" sx={{ fontSize: "20px" }}>$12.00</Typography>
-                    </StyledSliderBox>
-                </div>
-                <div >
-                    <StyledSliderBox>
-                        <SliderNewBox>
-                            <Typography sx={{ padding: '7px 20px' }}>New</Typography>
+                            </SliderNewBox>
+                            <img src={imgTwo} alt="" srcset="" style={{ width: "100%", cursor: "pointer" }} onMouseOver={() => setImgTwo(pinkwhiteCatcher2)} onMouseOut={() => setImgTwo(pinkwhiteCatcher1)} />
+                            <Typography align="center" sx={{ fontSize: "22px" }}>Tiger's Eye Hair Claw - Green</Typography>
+                            <Typography align="center" sx={{ fontSize: "20px" }}>$12.00</Typography>
+                        </StyledSliderBox>
+                    </div>
+                    <div >
+                        <StyledSliderBox>
+                            <SliderNewBox>
+                                <Typography sx={{ padding: '7px 20px' }}>New</Typography>
 
-                        </SliderNewBox>
-                        <img src={pinkCatcher1} alt="" srcset="" style={{ width: "100%" }} />
-                        <Typography align="center" sx={{ fontSize: "22px" }}>Tiger's Eye Hair Claw - Green</Typography>
-                        <Typography align="center" sx={{ fontSize: "20px" }}>$12.00</Typography>
-                    </StyledSliderBox>
-                </div>
-                <div >
-                    <StyledSliderBox>
-                        <img src={whiteCatcher1} alt="" srcset="" style={{ width: "100%" }} />
-                        <Typography align="center" sx={{ fontSize: "22px" }}>Tiger's Eye Hair Claw - Green</Typography>
-                        <Typography align="center" sx={{ fontSize: "20px" }}>$12.00</Typography>
-                    </StyledSliderBox>
-                </div>
+                            </SliderNewBox>
+                            <img src={imgThree} alt="" srcset="" style={{ width: "100%" ,cursor:"pointer" }} onMouseOver={() => setImgThree(pinkCatcher2)} onMouseOut={() => setImgThree(pinkCatcher1)} />
+                            <Typography align="center" sx={{ fontSize: "22px" }}>Tiger's Eye Hair Claw - Green</Typography>
+                            <Typography align="center" sx={{ fontSize: "20px" }}>$12.00</Typography>
+                        </StyledSliderBox>
+                    </div>
+                    <div >
+                        <StyledSliderBox>
+                            <img src={imgFour} alt="" srcset="" style={{ width: "100%", cursor: "pointer" }} onMouseOver={() => setImgFour(whiteCatcher2)} onMouseOut={() => setImgFour(whiteCatcher1)} />
+                            <Typography align="center" sx={{ fontSize: "22px" }}>Tiger's Eye Hair Claw - Green</Typography>
+                            <Typography align="center" sx={{ fontSize: "20px" }}>$12.00</Typography>
+                        </StyledSliderBox>
+                    </div>
 
 
-            </Slider>
+                </Slider>
 
-        </Box>
+            </Box>
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
+                <Typography my={5} sx={{
+                    fontSize: "17px", cursor: "pointer", display: "flex",
+                    transition:"all .5s",
+                    "&:hover": {
+                        color: grey[700]
+                    }
+                }}>
+                    Shop Hair Claws, Clips and Pins
+                    <KeyboardArrowRightIcon />
+                </Typography>
+            </Box>
+        </Box >
     )
 }
 
