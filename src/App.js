@@ -11,6 +11,8 @@ import HiringGallery from './components/HiringGallery'
 import SiteOneFooter from './components/SiteOneFooter';
 
 import { createTheme, ThemeProvider, } from '@mui/material/styles';
+import GridImagesList from './components/GridImagesList';
+import NewArrivals from './components/NewArrivals';
 const theme = createTheme({
   typography: {
     fontFamily: [
@@ -22,7 +24,7 @@ const theme = createTheme({
 
 function App() {
   return (
-
+    <>
       <ThemeProvider theme={theme}>
         <Header />
         <Navbar />
@@ -35,8 +37,13 @@ function App() {
         </Box>
         <SiteOneFooter />
       </ThemeProvider>
+      <Box px={11}>
+        <GridImagesList />
+        <NewArrivals />
+      </Box>
+    </>
 
-   
+
   );
 }
 
