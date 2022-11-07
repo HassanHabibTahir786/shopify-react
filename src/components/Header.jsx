@@ -1,9 +1,10 @@
-import { Box, Typography } from '@mui/material';
 import React from 'react';
+import { Box, Typography } from '@mui/material';
 
 const Header = () => {
     return (
         <Box
+        px={5}
             sx={{
                 display: "flex",
                 justifyContent: "space-between",
@@ -11,7 +12,7 @@ const Header = () => {
                 bgcolor: "black",
                 color: "white",
                 height: "35px",
-                px: 5,
+                // px: 5,
             }}
         >
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
@@ -24,6 +25,8 @@ const Header = () => {
                 <Typography sx={{ fontSize: "11px", px: 1 }}>OFFERS</Typography>
 
             </Box>
+
+           
         </Box>
     )
 }

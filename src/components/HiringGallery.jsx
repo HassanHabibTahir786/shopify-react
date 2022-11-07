@@ -1,79 +1,120 @@
 import React from 'react'
-import { Grid, ThemeProvider, Typography } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 
 import hiring from '../images/hiringGallery/hiring.webp'
 import gallery from '../images/hiringGallery/gallery.webp'
-import { styled, createTheme } from '@mui/material/styles';
-import { deepPurple } from '@mui/material/colors';
 const HiringGallery = () => {
-    // const customTheme = createTheme({
-    //     palette: {
-    //         primary: {
-    //             main: deepPurple[500],
-    //         },
-    //     },
-    // });
+
     return (
-        <Box mb={5}>
+        <Box mb={5} sx={{ position: "relative" }}>
             <Grid
                 container
                 justify="space-between"
                 spacing={3}
             >
-                <Grid item xs={12} md={6} sx={{ cursor: "pointer" }}>
-                    <Box
-                        pl={5} pb={5} sx={{
-                            display: "flex", alignItems: "end",
-                            minHeight: "360px", width: "100%",
-                            background: `rgba(0,0,0,0.5) url(${hiring})`,
-                            backgroundPosition: "center",
-                            backgroundRepeat: "no-repeat",
-                            backgroundSize: "cover",
-                             
-                            transition: "opacity 2s",
-                            // backgroundSize: "100% 100%",
+                <Grid item xs={12} md={6} >
 
-                            "&:hover": {
-                                // background: `rgba(0,0,0,0.999) url(${hiring})`,
-                                opacity:0.5
+                    <Box sx={{
+                        position: "relative",
+                        height: "360px",
+                        width: "100%",
+                        "& :hover": {
+                            "&.overlay": {
+                                opacity: 0.4
                             }
+                        }
+                    }}>
+                        <img src={hiring} alt="" style={{ width: "100%", height: "100%" }} />
+                        <Box className="content" sx={{
+                            position: "absolute",
+                            bottom: "10%",
+                            left: "10%",
+                            color: "white",
                         }}>
-                        <Box>
-
-                            <Typography sx={{ color: "white", fontSize: "30px", letterSpacing: 2 }}>We're Hiring!</Typography>
-                            <Typography sx={{ color: "white", fontSize: "16px" }}>Click here to learn more.</Typography>
+                            <Box>
+                                <Typography sx={{ fontSize: "30px", letterSpacing: 2 }}>We're Hiring!</Typography>
+                                <Typography sx={{ fontSize: "16px" }}>Click here to learn more.</Typography>
+                            </Box>
                         </Box>
+                        <Box className="overlay" sx={{
+                            position: "absolute",
+                            top: 0,
+                            left: 0,
+                            bottom: 0,
+                            right: 0,
+                            opacity: 0.1,
+                            transition: "opacity 0.4s ease-in-out",
+                            background: "black",
+                            cursor: "pointer",
 
-
+                        }}>
+                            <Box className="content" sx={{
+                                position: "absolute",
+                                bottom: "10%",
+                                left: "10%",
+                                color: "white",
+                            }}>
+                                <Box>
+                                    <Typography sx={{ fontSize: "30px", letterSpacing: 2 }}>We're Hiring!</Typography>
+                                    <Typography sx={{ fontSize: "16px" }}>Click here to learn more.</Typography>
+                                </Box>
+                            </Box>
+                        </Box>
                     </Box>
+
                 </Grid>
                 <Grid item xs={12} md={6} >
 
-                    <Box
-                        pl={5} pb={5} sx={{
-                            display: "flex", alignItems: "end",
-                            minHeight: "360px", width: "100%",
-                            background: `rgba(0,0,0,0.5) url(${gallery})`,
-                            backgroundPosition: "center",
-                            backgroundRepeat: "no-repeat",
-                            backgroundSize: "cover",
+                    <Box sx={{
+                        position: "relative",
+                        height: "360px",
+                        width: "100%",
+                        "& :hover": {
+                            "&.overlay": {
+                                opacity: 0.4
+                            }
+                        }
+                    }}>
+                        <img src={gallery} alt="" style={{ width: "100%", height: "100%" }} />
+                        <Box className="content" sx={{
+                            position: "absolute",
+                            bottom: "10%",
+                            left: "10%",
+                            color: "white",
+                        }}>
+                            <Box>
+                                <Typography sx={{ fontSize: "30px", letterSpacing: 2 }}>In the Gallery</Typography>
+                                <Typography sx={{ fontSize: "16px" }}>Gather by Risa Iwasaki Culbertson</Typography>
+                            </Box>
+                        </Box>
+                        <Box className="overlay" sx={{
+                            position: "absolute",
+                            top: 0,
+                            left: 0,
+                            bottom: 0,
+                            right: 0,
+                            opacity: 0.1,
+                            transition: "opacity 0.4s ease-in-out",
+                            background: "black",
                             cursor: "pointer",
 
-                            "&:hover": {
-                                backgroundBlendMode: "darken",
-                            }
                         }}>
-                        <Box>
-                            <Typography sx={{ color: "white", fontSize: "30px", letterSpacing: 2 }}>We're Hiring!</Typography>
-                            <Typography sx={{ color: "white", fontSize: "16px" }}>Click here to learn more.</Typography>
+                            <Box className="content" sx={{
+                                position: "absolute",
+                                bottom: "10%",
+                                left: "10%",
+                                color: "white",
+                            }}>
+                                <Box>
+                                    <Typography sx={{ fontSize: "30px", letterSpacing: 2 }}>In the Gallery</Typography>
+                                    <Typography sx={{ fontSize: "16px" }}>Gather by Risa Iwasaki Culbertson</Typography>
+                                </Box>
+                            </Box>
                         </Box>
-
-
                     </Box>
+
                 </Grid>
-
-
             </Grid>
         </Box >
     )

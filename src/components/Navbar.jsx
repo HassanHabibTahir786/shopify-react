@@ -37,22 +37,23 @@ const Navbar = () => {
         gap: 15,
     });
 
-    const MenuItems = [
-        { Name: "HOME", Link: "/" },
-        { Name: "SHOP", Link: "#" },
-        { Name: "FEATURES", Link: "#" },
-        { Name: "LOOKBOOK", Link: "#" },
-        { Name: "PAGES", Link: "#" },
-        { Name: "BLOG", Link: "#" },
-    ];
+    // const MenuItems = [
+    //     { Name: "HOME", Link: "/" },
+    //     { Name: "SHOP", Link: "#" },
+    //     { Name: "FEATURES", Link: "#" },
+    //     { Name: "LOOKBOOK", Link: "#" },
+    //     { Name: "PAGES", Link: "#" },
+    //     { Name: "BLOG", Link: "#" },
+    // ];
     return (
         <AppBar
+            position={"static"}
             sx={{
                 color: "black",
                 backgroundColor: grey[200],
                 px: { xs: 0, md: 1, lg: 2 }
             }}
-            position={"static"} >
+        >
             <StyledToolbar>
                 {/* <TemporaryDrawer /> */}
 
