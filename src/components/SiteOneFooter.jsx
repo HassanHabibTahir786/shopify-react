@@ -13,7 +13,6 @@ const SiteOneFooter = () => {
         marginBottom: "10px",
         color: "#fffc",
         fontWeight: "300"
-
     })
 
     const CommenFooterSubheadingHover = styled(Typography)({
@@ -24,9 +23,6 @@ const SiteOneFooter = () => {
         marginBottom: "10px",
         color: "#fffc",
         fontWeight: "300"
-
-
-
     })
 
 
@@ -104,9 +100,18 @@ const SiteOneFooter = () => {
                     </Box>
                 </Grid>
             </Grid>
-            <Box mt={5} sx={{ width: "100%", display: "flex", justifyContent: { xs: "center", md: "end" } }}>
-                <Typography sx={{ fontSize: "15px", fontWeight:"300" }} pr={5}>Ecommerce Software by Shopify </Typography>
-                <Typography sx={{ fontSize: "15px", fontWeight:"300" }}>© 2022, Rare Device </Typography>
+            <Box mt={5} sx={{
+
+                width: "100%",
+                display: "flex",
+                justifyContent: { xs: "center", md: "end" },
+                flexDirection: { xs: "column", sm: "row" },
+                alignItems:"center",
+
+
+            }}>
+                <Typography sx={{ fontSize: "15px", fontWeight: "300" }} pr={{xs:0, sm:5}}>Ecommerce Software by Shopify </Typography>
+                <Typography sx={{ fontSize: "15px", fontWeight: "300" }}>© 2022, Rare Device </Typography>
             </Box>
         </Box >
     )

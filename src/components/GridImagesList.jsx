@@ -1,7 +1,7 @@
 import * as React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
-import { Box, Stack, } from '@mui/system';
+import { Box,  } from '@mui/system';
 import { Typography, Button } from '@mui/material';
 import capgirl from '../images/GridShoppingImages/capgirl.webp';
 import man from '../images/GridShoppingImages/man.webp';
@@ -24,7 +24,7 @@ export default function GridImagesList() {
 
                 <ImageListItem sx={{
                     width: "100%",
-                    height: "100%0",
+                    height: "100%",
                     overflow: "hidden",
                     "& :hover": {
                         cursor: "pointer",

@@ -1,153 +1,15 @@
-// import React, { useState } from 'react';
-// import { Box, Typography } from '@mui/material';
-
-// import { grey } from '@mui/material/colors';
-
-
-// import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-// import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-
-// import Slider from "react-slick";
-
-// import whitebracelet1 from '../images/newArrivals/whitebracelet1.webp';
-// import whitebracelet2 from '../images/newArrivals/whitebracelet2.webp';
-
-// import blackbracelet1 from '../images/newArrivals/blackbracelet1.webp';
-// import blackbracelet2 from '../images/newArrivals/blackbracelet2.webp';
-
-// import greyladiesbag from '../images/newArrivals/greyladiesbag.jpg';
-// import blackladiesbag from '../images/newArrivals/blackladiesbag.jpg';
-
-// import ladieswhitedress1 from '../images/newArrivals/ladieswhitedress1.jpg';
-// import ladieswhitedress2 from '../images/newArrivals/ladieswhitedress2.jpg';
-
-
-// // const NewArrivals = () => {
-// //     return (
-// //         <Box>
-// //             <Typography align="center" fontWeight={700} sx={{ fontSize: "22px" }}>NEW ARRIVALS</Typography>
-// //             <Typography align="center" sx={{ fontSize: "13px" }}>  Shop our new arrivals from established brands</Typography>
-
-// //         </Box>
-// //     )
-// // }
-
-// // export default NewArrivals
-
-
-// const logos = [whitebracelet1, whitebracelet1, whitebracelet1, whitebracelet1, whitebracelet1, whitebracelet1];
-
-// const CommenBtnStyled = {
-//     fontSize: '30px',
-//     padding: '5px',
-//     borderRadius: '50%',
-//     boxShadow: "0 0 5px 3px #ccc",
-//     display: 'flex',
-//     justifyContent: "center",
-//     alignItems: "center",
-//     width: '20px',
-//     height: '20px',
-//     position: 'absolute',
-//     zIndex: '1',
-//     cursor: 'pointer',
-// }
-
-
-// function SampleNextArrow({ onClick }) {
-
-//     return (
-//         <Box
-//             sx={{
-//                 ...CommenBtnStyled,
-
-
-//                 right: '-50px',
-//                 top: {
-//                     xs: '40px',
-//                     md: "50px"
-//                 },
-
-//             }}
-//             onClick={onClick} >
-//             <KeyboardArrowRightIcon />
-//         </Box >
-
-//     );
-// }
-
-// function SamplePrevArrow({ onClick }) {
-
-//     return (
-//         <Box
-//             sx={{
-//                 ...CommenBtnStyled,
-//                 left: "-50px",
-//                 top: {
-//                     xs: '40px',
-//                     md: "50px"
-//                 },
-//             }}
-//             className="arrow arrow-left" onClick={onClick}>
-//             <KeyboardArrowLeftIcon />
-//         </Box>
-
-//     );
-// }
-
-// function CrossStore() {
-
-//     const settings = {
-//         slidesToShow: 5,
-//         centerPadding: 0,
-//         nextArrow: <SampleNextArrow />,
-//         prevArrow: <SamplePrevArrow />,
-//     };
-
-
-//     return (
-//         <Box my={10}>
-
-//             <Slider {...settings} style={{
-//             }} >
-//                 {
-//                     logos.map((logo, index) => (
-//                         <Box
-//                             sx={{
-//                                 bgcolor: grey[200],
-//                                 p: { xs: 1, md: 2 },
-//                                 width: { xs: "50px" },
-//                                 height: { xs: "100px", md: '120px' },
-//                                 border: '1px solid ',
-//                                 display: 'flex',
-//                                 justifyContent: 'center',
-//                                 alignItems: 'center',
-//                             }}
-//                             key={index} >
-//                             <img src={logo} alt="" style={{ width: "100%", height: "100%" }} />
-//                         </Box>
-//                     ))
-//                 }
-//             </Slider>
-
-//         </Box >
-
-//     );
-// }
-
-// export default CrossStore;
-
 
 
 import React, { useState } from 'react'
-import { Typography, Box, styled, Rating, Avatar, Tooltip } from '@mui/material'
+import { Typography, Box, styled, Rating, Avatar, Tooltip, ImageList, ImageListItem, Button } from '@mui/material'
 import { Stack } from '@mui/system';
-import { deepOrange, green } from '@mui/material/colors';
-import AssignmentIcon from '@mui/icons-material/Assignment';
+
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ZoomInIcon from '@mui/icons-material/ZoomIn';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+
 
 import Slider from "react-slick";
 
@@ -166,6 +28,8 @@ import ladieswhitedress2 from '../images/newArrivals/ladieswhitedress2.jpg';
 import capblack from '../images/newArrivals/capblack.jpg';
 import cappink from '../images/newArrivals/cappink.jpg';
 
+import whitedresslady from '../images/newArrivals/whitedresslady.webp';
+import blackdresslady from '../images/newArrivals/blackdresslady.webp';
 
 const StyledSliderBox = styled(Box)({
     margin: "0 8px",
@@ -180,7 +44,9 @@ function SampleNextArrow({ onClick }) {
                 position: 'absolute',
                 zIndex: '1',
                 cursor: 'pointer',
-                right: '-50px',
+                right: {
+                    xs: 0, md: "-30px", lg: "-50px"
+                },
                 top: "50%"
             }}
             onClick={onClick} >
@@ -198,7 +64,9 @@ function SamplePrevArrow({ onClick }) {
                 position: 'absolute',
                 zIndex: '1',
                 cursor: 'pointer',
-                left: "-50px",
+                left: {
+                    xs: 0, md: "-30px", lg: "-50px"
+                },
                 top: "50%"
             }}
             className="arrow arrow-left" onClick={onClick}>
@@ -222,7 +90,6 @@ const GetGrip = () => {
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,
-        // current
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />,
         responsive: [
@@ -255,15 +122,15 @@ const GetGrip = () => {
     return (
         <Box>
             <Box my={2}>
-                <Typography  align={'center'} fontWeight={700} sx={{ fontSize: "18px" }}>
+                <Typography align={'center'} fontWeight={700} sx={{ fontSize: "18px" }}>
                     NEW ARRIVALS
                 </Typography>
-                <Typography  align={'center'}  sx={{ fontSize: "13px" }}>
+                <Typography align={'center'} sx={{ fontSize: "13px" }}>
                     Shop our new arrivals from established brands
 
                 </Typography>
 
-                <Slider {...settings} style={{margin:"30px 0"}}>
+                <Slider {...settings} style={{ margin: "30px 0" }}>
                     <div >
                         <StyledSliderBox
                             onMouseOver={() => setImgOne(whitebracelet2)} onMouseOut={() => setImgOne(whitebracelet1)}
@@ -560,6 +427,104 @@ const GetGrip = () => {
 
                 </Slider>
 
+            </Box>
+
+            <Box py={2}>
+                <ImageList sx={{
+                    width: '100%', height: "100%",
+                    columnCount: {
+                        xs: '1 !important',
+                        md: '2 !important',
+
+                    },
+                }} variant="masonry" gap={20}>
+
+                    <ImageListItem sx={{
+                        width: "100%",
+                        height: "100%0",
+                        overflow: "hidden",
+                        "& :hover": {
+                            cursor: "pointer",
+                            "&.gridShoppingImage": {
+                                transform: 'scale(1.1)'
+                            }
+                        }
+                    }}>
+                        <img
+                            className="gridShoppingImage"
+                            style={{ transition: "all .5s" }}
+                            src={whitedresslady}
+                            loading="lazy"
+                        />
+
+                        <Box
+                            p={2}
+                            sx={{
+                                background: "white",
+                                textAlign: "center",
+                                backgroud: "white",
+                                position: 'absolute',
+                                left: ' 50%',
+                                right: 0,
+                                bottom: "20px",
+                                transform: 'translate(-50%)',
+                            }}>
+                            <Typography fontWeight={700} mb={1} sx={{
+
+                                fontSize: { xs: "12px", sm: "16px" },
+
+                                lineHeight: "20px",
+                            }}>  FIND THE BEST COLLECTION AROUND THE WORLD</Typography>
+
+                            <Button variant="contained" sx={{
+                                borderRadius: 0, bgcolor: "black", color: "white", boxShadow: "0",
+                                fontSize: { xs: "10px", sm: "0.875rem" }
+                            }}>shop now</Button>
+                        </Box>
+                    </ImageListItem>
+
+                    <ImageListItem sx={{
+                        overflow: "hidden",
+                        "& :hover": {
+                            cursor: "pointer",
+                            "&.gridShoppingImage": {
+                                transform: 'scale(1.1)'
+                            }
+                        }
+                    }}>
+
+                        <img
+                            className="gridShoppingImage"
+                            style={{ transition: "all .5s" }}
+                            src={blackdresslady}
+                            loading="lazy"
+                        />
+                        <Box
+                            p={2}
+                            sx={{
+                                background: "white",
+                                textAlign: "center",
+                                backgroud: "white",
+                                position: 'absolute',
+                                left: ' 50%',
+                                right: 0,
+                                bottom: "20px",
+                                transform: 'translate(-50%)',
+                            }}>
+                            <Typography fontWeight={700} mb={1} sx={{
+                                fontSize: { xs: "12px", sm: "16px" },
+
+                                lineHeight: "20px",
+                            }}>  AWESOME T-SHIRTS, CROP TOPS AND MORE...</Typography>
+                            <Button variant="contained" sx={{
+                                borderRadius: 0, bgcolor: "black", color: "white", boxShadow: "0",
+                                fontSize: { xs: "10px", sm: "0.875rem" }
+                            }}>VIEW COLLECTION</Button>
+                        </Box>
+                    </ImageListItem>
+
+
+                </ImageList >
             </Box>
 
         </Box >

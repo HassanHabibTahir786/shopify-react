@@ -13,6 +13,8 @@ import SiteOneFooter from './components/SiteOneFooter';
 import { createTheme, ThemeProvider, } from '@mui/material/styles';
 import GridImagesList from './components/GridImagesList';
 import NewArrivals from './components/NewArrivals';
+import FreshFromOurBlog from './components/FreshFromOurBlog';
+import SiteTwoFooter from './components/SiteTwoFooter';
 const theme = createTheme({
   typography: {
     fontFamily: [
@@ -21,6 +23,15 @@ const theme = createTheme({
     ].join(','),
   },
 });
+const poppinsTheme = createTheme({
+  typography: {
+    fontFamily: [
+      'Poppins',
+      'sans-serif'
+    ].join(','),
+  },
+});
+
 
 function App() {
   return (
@@ -37,10 +48,16 @@ function App() {
         </Box>
         <SiteOneFooter />
       </ThemeProvider>
-      <Box px={11}>
-        <GridImagesList />
-        <NewArrivals />
-      </Box>
+      <ThemeProvider theme={poppinsTheme}>
+
+        <Box px={{ xs: 1, md: 6, lg: 11 }}>
+          <GridImagesList />
+          <NewArrivals />
+          <FreshFromOurBlog />
+        </Box>
+        <SiteTwoFooter />
+      </ThemeProvider>
+
     </>
 
 
