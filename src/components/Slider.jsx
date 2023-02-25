@@ -6,11 +6,6 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import Slider from "react-slick";
 
-// import logo1 from '../images/logos/logo1.png';
-// import logo2 from '../images/logos/logo2.png';
-// import logo3 from '../images/logos/logo3.png';
-// import logo4 from '../images/logos/logo4.png';
-// import logo5 from '../images/logos/logo5.png';
 import slider1 from '../images/slider/slider1.jpg'
 import slider2 from '../images/slider/slider2.jpg'
 import slider3 from '../images/slider/slider3.jpg'
@@ -33,6 +28,17 @@ const CommenBtnStyled = {
     zIndex: '1',
     cursor: 'pointer',
 }
+// const theme = createTheme();
+
+// theme.typography.h3 = {
+//     fontSize: '1.2rem',
+//     '@media (min-width:600px)': {
+//         fontSize: '1.5rem',
+//     },
+//     [theme.breakpoints.up('md')]: {
+//         fontSize: '2rem',
+//     },
+// };
 
 
 function SampleNextArrow({ onClick }) {
@@ -77,7 +83,7 @@ function SamplePrevArrow({ onClick }) {
 }
 
 function CrossStore() {
-    const [slideIndex, setSlideIndex] = useState(0);
+    // const [slideIndex, setSlideIndex] = useState(0);
 
     const settings = {
         // infinite: true,
@@ -166,7 +172,9 @@ function CrossStore() {
                             alignItems: "center"
                         }}>
                             <Box>
-                                <Typography variant="h3" fontWeight={700} sx={{ color: ind === 0 ? "#4e4c4c" : ind === 1 ? "black" : "white" }}>
+                                <Typography variant="h3" fontWeight={700} sx={{
+                                    color: ind === 0 ? "#4e4c4c" : ind === 1 ? "black" : "white",
+                                }}>
                                     Bloctech Solutions
                                 </Typography>
                                 <Typography my={3} variant="h6" sx={{ maxWidth: "700px", color: ind === 0 ? "white" : ind === 1 ? "black" : "white" }} >
